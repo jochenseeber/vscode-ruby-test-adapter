@@ -137,6 +137,12 @@
           },
           "scope": "resource"
         },
+        "rubyTestExplorer.debuggerCommand": {
+          "markdownDescription": "Define how to run the debugger, for example `./bin/rdebug-ide`, `bundle exec rdebug-ide` or `rdebug-ide`.",
+          "default": "bundle exec rdebug-ide",
+          "type": "string",
+          "scope": "resource"
+        },
         "rubyTestExplorer.debuggerHost": {
           "markdownDescription": "The host to connect the debugger to.",
           "default": "127.0.0.1",

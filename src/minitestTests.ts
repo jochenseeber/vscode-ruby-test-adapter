@@ -104,9 +104,10 @@ export class MinitestTests extends Tests {
   protected testCommandWithDebugger(debuggerConfig?: vscode.DebugConfiguration): string {
     let cmd = `${this.getTestCommand()} vscode:minitest:run`
     if (debuggerConfig) {
-      cmd = `rdebug-ide --host ${debuggerConfig.remoteHost} --port ${debuggerConfig.remotePort}`
+      cmd = `${this.getDebuggerCommand()} --host ${debuggerConfig.remoteHost} --port ${debuggerConfig.remotePort}`
             + ` -- ${(process.platform == 'win32') ? '%EXT_DIR%' : '$EXT_DIR'}/debug_minitest.rb`
     }
+
     return cmd
   }
 

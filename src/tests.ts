@@ -520,6 +520,16 @@ export abstract class Tests {
   }
 
   /**
+   * Get the user-configured debugger command, if there is one.
+   *
+   * @return The debugger command
+   */
+  protected getDebuggerCommand(): string {
+    let command: string = (vscode.workspace.getConfiguration('rubyTestExplorer', null).get('debuggerCommand') as string);
+    return command || `bundle exec vscode-ide`
+  }
+
+  /**
    * Runs a single test.
    *
    * @param testLocation A file path with a line number, e.g. `/path/to/test.rb:12`.
